@@ -1,46 +1,41 @@
-CREATE TABLE pokemon
-(
-    "id" serial primary key,
-    "name" VARCHAR(80),
-    "description" VARCHAR(1000),
-    "images" VARCHAR(120)
+CREATE TABLE "champion" (
+	"id" serial primary key,
+	"name" VARCHAR(80),
+	"title" VARCHAR(240),
+	"images" VARCHAR(200)
 );
 
-CREATE TABLE pokemon_type
-(
-    "id" serial primary key,
-    "pokemon_id" INT REFERENCES "pokemon",
-    "type_id" INT REFERENCES "type"
+CREATE TABLE "attribute" (
+	"id" serial primary key,
+	"type" VARCHAR(80)
 );
 
-CREATE TABLE type
-(
-    "id" serial primary key,
-    "description" VARCHAR(80)
+CREATE TABLE "champion_attribute" (
+	"id" serial primary key,
+	"champion_id" INT REFERENCES "champion",
+	"attribute_id" INT REFERENCES "attribute"
 );
 
-INSERT INTO "pokemon"
-    ("name","description","images")
+INSERT INTO "champion"
+    ("name","title","images")
 VALUES
-    ('Charizard', 'Charizard is a dual-type Fire/Flying Pokémon introduced in Generation I. It evolves from Charmeleon starting at level 36. It is the final form of Charmander. Charizard has three other forms.', 'images/charizard.png'),
-    ('Pikachu', 'Pikachu are small, mouse-like Pokémon that have short, yellow fur with brown markings covering their backs and parts of their tails. They have black-tipped, pointy ears and red circles on their cheeks, which are said to contain "electrical sacs". Their tails are shaped in the form of a lightning bolt.', 'images/pikachu.png'),
-    ('Eevee', 'Eevee is a Normal-type Pokémon introduced in Generation I. It evolves into one of eight different Pokémon through various methods: Eevee evolves into Vaporeon when exposed to a Water Stone. Eevee evolves into Jolteon when exposed to a Thunder Stone.', 'images/eevee.png'),
-    ('Snorlax', 'Snorlax, the Sleeping Pokémon and the evolved form of Munchlax. It can eat 400 pounds of food before feeling full. Snorlax, the Sleeping Pokémon. Snorlax becomes much too lazy to lift even a finger when it has a full belly, which then makes it safe to bounce upon.', 'images/snorlax.png'),
-    ('Mewtwo', 'Mewtwo is a Pokémon created by science. It is a bipedal, humanoid creature with some feline features. It is primarily gray with a long, purple tail. On top of its head are two short, blunt horns, and it has purple eyes.', 'images/mewtwo.png'),
-    ('Celebi', 'Celebi is a dual-type Psychic/Grass Mythical Pokémon introduced in Generation II. It is not known to evolve into or from any other Pokémon. It serves as the guardian of Ilex Forest.', 'images/celebi.png'),
-    ('Lucario', 'Lucario is a dual-type Fighting/Steel Pokémon introduced in Generation IV. It evolves from Riolu when leveled up with high friendship during the day. Lucario can Mega Evolve into Mega Lucario using the Lucarionite.', 'images/lucario.png');
+    ('Aatrox', 'The Darkin Blade', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/c/cc/AatroxSquare.png/revision/latest/scale-to-width-down/240?cb=20180613011028'),
+    ('Ahri', 'The Nine-Tailed Fox', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/18/AhriSquare.png/revision/latest/scale-to-width-down/240?cb=20170728171734'),
+    ('Akali', 'The Rogue Assassin', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/a/a5/AkaliSquare.png/revision/latest/scale-to-width-down/240?cb=20180731211320'),
+    ('Alistar', 'The Minotaur', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/3/34/AlistarSquare.png/revision/latest/scale-to-width-down/240?cb=20170728172718'),
+    ('Amumu', 'The Sad Mummy', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/26/AmumuSquare.png/revision/latest/scale-to-width-down/240?cb=20170728173711'),
+    ('Anivia', 'The Cryopheonix', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/0/01/AniviaSquare.png/revision/latest/scale-to-width-down/240?cb=20170728174338'),
+    ('Annie', 'The Dark Child', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/6/6f/AnnieSquare.png/revision/latest/scale-to-width-down/240?cb=20170728174744');
 
-INSERT INTO "type"
-    ("description")
+INSERT INTO "attribute"
+    ("type")
 VALUES
-    ('fire'),
-    ('flying'),
-    ('normal'),
-    ('electric'),
-    ('psychic'),
-    ('steel'),
-    ('grass'),
-    ('fighting');
+    ('fighter'),
+    ('tank'),
+    ('mage'),
+    ('support'),
+    ('assassin'),
+    ('marksmen');
 
 SELECT *
 FROM pokemon;
