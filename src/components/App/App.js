@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ChampionsList from '../ChampionsList/ChampionsList';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+
+// custom components
+import Home from '../views/Home/Home';
+import Champion from '../views/Champion/Champion';
+
+// custom styles
 import './App.css';
 
 class App extends Component {
@@ -11,7 +17,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="App-heading">League of Legends Champions!</h1>
-        <ChampionsList />
+        <Router>
+          <Route exact path="/" component={Home} />
+          <Route path="/champion/:id" component={Champion} />
+        </Router>
       </div>
     );
   }

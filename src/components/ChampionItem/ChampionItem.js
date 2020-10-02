@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // import custom styling
 import styles from './ChampionItem.module.css';
@@ -6,22 +7,19 @@ import styles from './ChampionItem.module.css';
 class ChampionItem extends Component {
   render() {
     return (
-      <>
-        {this.props.champions.map((item, i) => {
-          return (
-            <div key={i} className={styles.item}>
-              <img
-                src={item.images}
-                alt="headshot of champion as display in game client"
-              />
-              <h3>{item.name}</h3>
-              <h4>{item.title}</h4>
-            </div>
-          );
-        })}
-      </>
+      <div
+        className={styles.item}
+        onClick={this.props.clickChampion(this.props.champion.id)}
+      >
+        <img
+          src={this.props.champion.images}
+          alt="headshot of champion as display in game client"
+        />
+        <h3>{this.props.champion.name}</h3>
+        <h4>{this.props.champion.title}</h4>
+      </div>
     );
   }
 }
 
-export default ChampionItem;
+export default connect()(ChampionItem);

@@ -9,7 +9,15 @@ class ChampionsList extends React.Component {
   render() {
     return (
       <div className={styles.list}>
-        <ChampionItem champions={this.props.store.championsReducer} />
+        {this.props.store.championsReducer.map((champion, i) => {
+          return (
+            <ChampionItem
+              key={i}
+              champion={champion}
+              clickChampion={this.props.clickChampion}
+            />
+          );
+        })}
       </div>
     );
   }
