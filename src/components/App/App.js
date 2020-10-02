@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ChampionsList from '../ChampionsList/ChampionsList';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Pokemon!</h1>
+        <h1>League of Legends Champions!</h1>
+        <ChampionsList />
       </div>
     );
   }
