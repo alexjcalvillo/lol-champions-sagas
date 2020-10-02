@@ -55,7 +55,7 @@ SELECT *
 FROM champion;
 
 
-SELECT champion.id, champion.name, champion.details, champion.images, array_agg("attribute".type) as types FROM champion
+SELECT champion.id, champion.name, champion.title, champion.details, champion.images, array_agg("attribute".type) as types FROM champion
 JOIN champion_attribute ON champion.id = champion_attribute.champion_id
 JOIN "attribute" ON champion_attribute.attribute_id = attribute.id
-GROUP BY champion.id;
+GROUP BY champion.id ORDER BY champion.id;

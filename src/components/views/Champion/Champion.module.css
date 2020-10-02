@@ -1,3 +1,25 @@
+.currentChampion {
+  margin: auto;
+  width: 50%;
+}
+
 .currentChampion img {
   width: 200px;
+  padding: 20px;
+}
+
+.displayGrid {
+  display: flex;
+  border-bottom: 1px solid #767676;
+}
+
+.displayBox {
+  border: 1px solid #767676;
+  border-radius: 2px;
+  padding: 30px;
+}
+
+.identify {
+  flex: 1;
+  padding: 0 20px;
 }
