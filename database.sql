@@ -19,13 +19,13 @@ CREATE TABLE "champion_attribute" (
 INSERT INTO "champion"
     ("name","title","images")
 VALUES
-    ('Aatrox', 'The Darkin Blade', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/c/cc/AatroxSquare.png/revision/latest/scale-to-width-down/240?cb=20180613011028'),
-    ('Ahri', 'The Nine-Tailed Fox', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/18/AhriSquare.png/revision/latest/scale-to-width-down/240?cb=20170728171734'),
-    ('Akali', 'The Rogue Assassin', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/a/a5/AkaliSquare.png/revision/latest/scale-to-width-down/240?cb=20180731211320'),
-    ('Alistar', 'The Minotaur', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/3/34/AlistarSquare.png/revision/latest/scale-to-width-down/240?cb=20170728172718'),
-    ('Amumu', 'The Sad Mummy', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/26/AmumuSquare.png/revision/latest/scale-to-width-down/240?cb=20170728173711'),
-    ('Anivia', 'The Cryopheonix', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/0/01/AniviaSquare.png/revision/latest/scale-to-width-down/240?cb=20170728174338'),
-    ('Annie', 'The Dark Child', 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/6/6f/AnnieSquare.png/revision/latest/scale-to-width-down/240?cb=20170728174744');
+    ('Aatrox', 'The Darkin Blade', 'images/AatroxSquare.png'),
+    ('Ahri', 'The Nine-Tailed Fox', 'images/AhriSquare.png'),
+    ('Akali', 'The Rogue Assassin', 'images/AkaliSquare.png'),
+    ('Alistar', 'The Minotaur', 'images/AlistarSquare.png'),
+    ('Amumu', 'The Sad Mummy', 'images/AmumuSquare.png'),
+    ('Anivia', 'The Cryopheonix', 'images/AniviaSquare.png'),
+    ('Annie', 'The Dark Child', 'images/AnnieSquare.png');
 
 INSERT INTO "attribute"
     ("type")
@@ -38,7 +38,7 @@ VALUES
     ('marksmen');
 
 SELECT *
-FROM pokemon;
+FROM champion;
 
 SELECT pokemon.id, pokemon.name, pokemon.description, pokemon.images, array_agg(type.description) as types
 FROM pokemon
