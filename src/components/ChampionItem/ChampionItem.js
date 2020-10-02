@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
+// import custom styling
+import styles from './ChampionItem.module.css';
+
 class ChampionItem extends Component {
   render() {
     return (
-      <div>
+      <>
         {this.props.champions.map((item, i) => {
           return (
-            <div key={i}>
+            <div key={i} className={styles.item}>
               <img
                 src={item.images}
                 alt="headshot of champion as display in game client"
@@ -16,7 +19,7 @@ class ChampionItem extends Component {
             </div>
           );
         })}
-      </div>
+      </>
     );
   }
 }

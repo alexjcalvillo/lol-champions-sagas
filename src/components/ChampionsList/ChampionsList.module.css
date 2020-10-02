@@ -1,0 +1,6 @@
+.list {
+  display: flex;
+  margin: auto;
+  width: 66.66%;
+  flex-flow: row wrap;
+}

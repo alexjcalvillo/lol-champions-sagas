@@ -25,7 +25,8 @@ VALUES
     ('Alistar', 'The Minotaur', 'images/AlistarSquare.png'),
     ('Amumu', 'The Sad Mummy', 'images/AmumuSquare.png'),
     ('Anivia', 'The Cryopheonix', 'images/AniviaSquare.png'),
-    ('Annie', 'The Dark Child', 'images/AnnieSquare.png');
+    ('Annie', 'The Dark Child', 'images/AnnieSquare.png'),
+    ('Aphelios', 'The Weapon of the Faithful', 'images/ApheliosSquare.png');
 
 INSERT INTO "attribute"
     ("type")
@@ -35,7 +36,7 @@ VALUES
     ('mage'),
     ('support'),
     ('assassin'),
-    ('marksmen');
+    ('marksman');
 
 SELECT *
 FROM champion;
