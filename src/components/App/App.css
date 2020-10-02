@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+
+.App-heading {
+  font-weight: 200;
+  font-size: 5em;
+  padding: 0;
+  margin: 15px 0 50px;
+}
