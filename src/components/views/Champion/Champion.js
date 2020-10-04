@@ -9,6 +9,7 @@ class Champion extends Component {
     champion: {
       types: [],
     },
+    editMode: false,
   };
   componentDidMount() {
     let currentId = Number(this.props.match.params.id);
@@ -24,6 +25,18 @@ class Champion extends Component {
       champion: currentChampion,
     });
   }
+
+  editClick = () => {
+    this.setState({
+      editMode: true,
+    });
+  };
+
+  saveClick = () => {
+    this.setState({
+      editMode: false,
+    });
+  };
 
   backClicked = () => {
     this.props.history.push('/');
@@ -48,6 +61,15 @@ class Champion extends Component {
           <button className="backBtn" onClick={this.backClicked}>
             BACK
           </button>
+          {this.state.editMode ? (
+            <button className="backBtn" onClick={this.saveClick}>
+              SAVE
+            </button>
+          ) : (
+            <button className="backBtn" onClick={this.editClick}>
+              EDIT
+            </button>
+          )}
         </div>
         <div className={styles.displayBox}>
           <div className={styles.displayGrid}>
@@ -73,16 +95,28 @@ class Champion extends Component {
                 borderRight: '1px solid #767676',
               }}
             >
-              <p
-                style={{
-                  color: 'white',
-                  fontSize: '0.9em',
-                  fontWeight: '200',
-                  letterSpacing: '0.06rem',
-                }}
-              >
-                {this.state.champion.details}
-              </p>
+              {this.state.editMode ? (
+                <textarea
+                  style={{
+                    width: '100%',
+                    height: '90%',
+                    borderRadius: '3px',
+                    resize: 'none',
+                    outline: 'none',
+                  }}
+                ></textarea>
+              ) : (
+                <p
+                  style={{
+                    color: 'white',
+                    fontSize: '0.9em',
+                    fontWeight: '200',
+                    letterSpacing: '0.06rem',
+                  }}
+                >
+                  {this.state.champion.details}
+                </p>
+              )}
             </div>
           </div>
           <div style={{ display: 'flex' }}>

@@ -1,16 +1,21 @@
 .item {
   flex: 1 1 20%;
-  margin-right: 20px;
+  padding: 10px;
+  /* margin-right: 20px; */
   place-items: center;
-  opacity: 1;
-  transition: all 0.3s 0.08s ease-in-out;
+}
+
+.item img {
+  width: 200px;
+  /* opacity: 0.6; */
 }
 
 .item img:hover {
-  opacity: 0.6;
+  opacity: 1;
   position: relative;
-  bottom: 5px;
+  bottom: 2px;
   left: 0;
-  transition: all 0.2s 0.05s ease-in-out;
+  /* border-radius: 50%; */
+  transition: all 0.2s 0.02s ease-in-out;
   cursor: pointer;
 }
