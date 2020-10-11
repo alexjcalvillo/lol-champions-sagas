@@ -125,7 +125,22 @@ class Champion extends Component {
               <h4 style={{ display: 'inline' }}>
                 <span style={{ textDecoration: 'underline' }}>Types</span>:{' '}
               </h4>
-              {typesArray}
+              {this.state.editMode ? (
+                <select>
+                  {this.props.store.attributesReducer.map((item, i) => {
+                    return (
+                      <option key={i} value={item.id}>
+                        {item.type}
+                      </option>
+                    );
+                  })}
+                </select>
+              ) : (
+                ({
+                  /* TODO: create componenet to handle adding types and changing types */
+                },
+                typesArray)
+              )}
             </div>
             <div style={{ flex: 2 }}></div>
           </div>

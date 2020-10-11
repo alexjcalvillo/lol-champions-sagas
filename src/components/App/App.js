@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 // custom components
 import Home from '../views/Home/Home';
@@ -12,6 +12,7 @@ import './App.css';
 class App extends Component {
   componentDidMount() {
     this.props.dispatch({ type: 'GET_CHAMPIONS' });
+    this.props.dispatch({ type: 'GET_ATTR' });
   }
   render() {
     return (

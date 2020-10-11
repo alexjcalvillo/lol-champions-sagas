@@ -1,8 +1,7 @@
-import { takeEvery } from 'redux-saga/effects';
-import getChampions from './champions.saga';
+import { all } from 'redux-saga/effects';
+import championsSaga from './champions.saga';
+import attributesSaga from './attributes.saga';
 
-function* rootSaga() {
-  yield takeEvery('GET_CHAMPIONS', getChampions);
+export default function* rootSaga() {
+  yield all([championsSaga(), attributesSaga()]);
 }
-
-export default rootSaga;

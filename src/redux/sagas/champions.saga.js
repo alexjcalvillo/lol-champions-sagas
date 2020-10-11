@@ -1,4 +1,4 @@
-import { put } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* getChampions(action) {
@@ -13,4 +13,6 @@ function* getChampions(action) {
   }
 }
 
-export default getChampions;
+export default function* championsSaga() {
+  yield takeEvery('GET_CHAMPIONS', getChampions);
+}

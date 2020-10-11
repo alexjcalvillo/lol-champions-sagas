@@ -15,6 +15,17 @@ router.get('/', (req, res) => {
     });
 });
 // GET ALL ATTRIBUTES
+router.get('/attr', (req, res) => {
+  pool
+    .query(`SELECT * FROM attribute ORDER by attribute.id;`)
+    .then((response) => {
+      res.send(response.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
 
 // GET CHAMPIONS WITH ATTRIBUTES
 router.get('/full', (req, res) => {
